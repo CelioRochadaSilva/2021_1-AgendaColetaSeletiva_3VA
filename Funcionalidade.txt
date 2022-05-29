@@ -1,0 +1,37 @@
+
+link video yutube
+
+
+AGENDA COLETA SELETIVA - LABORATÓRIO DE PROGRAMAÇÃO 1
+aluno: Celio Rocha da Silva. LC1 
+
+A funcionalidade do programa é uma agenda para Coleta seletiva sem partes graficas e feita com Python 3 . Para sua executação o funcionario da empresa deve executar o 
+main.py que esta dentro da pasta 2021_1-AgendaColetaSeletiva_3VA e utilizar software compativel: foi utilizado o Visual StudioCod 
+
+arquivos cliente.txt e coleta.txt: o programa realiza gravaçao conforme opções disponibilizada 
+
+Opções para funcionario da empresa prestadora do serviço de coleta seletiva.
+Obs. Cliente não tera acesso a funcionalidade do aplicativo e sim o fornecedor que realizar que realizara todos os procedimentos 
+que o programa disponibiliza e os dados serão atraves de contato telefone com o cliente ou cadastro realizado no site da prestadora do serviço 
+(quanto mior for o numero mairo sera a satisfação do cliente)        
+
+O que dá para fazer com a Agenda Coleta Seletiva registrar no arquivo txt:
+1 - Cadastrar cliente pessoa fisisca ou juridica (Id) (nome, endereço, e-mail, telefone)
+
+2 - Remover cadastro de clientes:
+
+3 - Buscar de cliente pelo Id;
+
+4 - Listar clientes cadastrado; 
+
+5 - Cadastrar coleta seletiva com tipo de coleta e hora de atendimento.
+
+6 - Listar coletas cadastradas;
+
+7 - Busca de Coletas cadastradas pelo Id;
+
+8 - Deletar pelo nome coletas cadastradas.
+
+9 - Fecha o aplicativo
+
+Obs.: Foi adicionado opções (com id e busca de coleta , listar  implementação excluir coleta )  
