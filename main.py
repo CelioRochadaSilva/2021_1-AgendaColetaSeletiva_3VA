@@ -1,10 +1,16 @@
 import os
-
-print('=+' * 20)
-print('Sejam Bem vindo(a) Agenda!')
-print('Coleta seletiva!')
+def clear():
+        try:
+            lines = os.get_terminal_size().lines
+        except AttributeError:
+            lines = 130
+        print()
 
 def menu (): 
+    print('=+' * 20)
+    print('Sejam Bem vindo(a) Agenda!')
+    print('Coleta seletiva!')
+    
     print ('Escolha uma opção de 1 a 7 ') 
     print ('   |1| - Cadastrar cliente') # opção de cadastro para cliente com a função adicionar_cadastro com id
     print ('   |2| - Remover cliente') # remove cliente cadastrado com função remover_cadastro
@@ -15,17 +21,20 @@ def menu ():
     print ('   |7| - Busca com Id coleta')# ecluir coleta cadastrada
     print ('   |8| - Excluir coleta')# ecluir coleta cadastrada
     print ('   |9| - Sair\n') # fecha o aplicativo
-    opt = input('Digite a opçao desejada: ').strip() # entrada de dados
     print('=+' * 20)
+    opt = input('Digite a opçao desejada: \n').strip() # entrada de dados
+   
     return opt # retorna menu opçes
-    
-def adicionar_cliente():#adicionar cadastro cliente
-    idCliente = int(input('Digite o id do cliente: '))
+clear()
 
-    nome = input('Digite o nome do cliente ou da empresa: ') 
+def adicionar_cliente():#adicionar cadastro cliente
+    #id_cliente = 0
+    idCliente = int(input('Digite o id do cliente: \n'))
+      
+    nome = input('Digite o nome do cliente ou da empresa: \n') 
     email = input('Digite o e-mail de contato: ')
-    telefone = input('Digite o telefone: ')
-    endereco = input('Digite o endereço: ')
+    telefone = input('Digite o telefone: \n')
+    endereco = input('Digite o endereço: \n')
     
     try: # tratamento de erro
         agenda = open("cliente.txt", "a") #w apaga a pode escrever    , encoding='utf-8'
@@ -38,7 +47,7 @@ def adicionar_cliente():#adicionar cadastro cliente
 
    # remove cliente cadastrado informando o nome
 def remover_cliente():
-    nomeExcluido = input(f'Digite o nome deseja excluir: ')
+    nomeExcluido = input(f'Digite o nome deseja excluir: \n')
     agenda = open("cliente.txt", "r")
     excluirNome = [] # vaiavel auxiliar 1 guarda dados 
     aux = [] # vaiavel auxiliar 1 guarda dados 
@@ -59,7 +68,7 @@ def remover_cliente():
 
        
 def buscar_clientes():
-    nome = input(f'Digite o id do cliente para ser listado:')
+    nome = input(f'Digite o id do cliente para ser listado: \n')
     agenda = open("cliente.txt", "r") # exibe lista de clientes pelo Id 
     for contato in agenda:
         if nome in contato.split(" | ")[0]:
@@ -67,7 +76,7 @@ def buscar_clientes():
     agenda.close()
 
 def buscar_coletaSeletiva():
-    nome = input(f'Digite o id do cliente para ser listado:')
+    nome = input(f'Digite o id do cliente para ser listado: \n')
     agenda = open("coleta.txt", "r") # exibe lista de clientes pelo Id 
     for contato in agenda:
         if nome in contato.split(" | ")[0]:
@@ -86,10 +95,10 @@ def adicionar_coleta():
     tcoleta=[]
     horacoleta=[]
     pcoleta=[]
-    idCliente = int(input('Digite o id do cliente: ')) #ok
-    nome = input('Digite o nome do cliente: ') 
-    endereco = input('Digite o endereço: ')
-    telefone = input('Digite o telefone: ')
+    idCliente = int(input('Digite o id do cliente: \n')) #ok
+    nome = input('Digite o nome do cliente: \n') 
+    endereco = input('Digite o endereço: \n')
+    telefone = input('Digite o telefone: \n')
     print ('Escolha a opção de coleta seletiva:') 
     print ('   |1ª| - Papel') 
     print ('   |2ª| - Vidro') 
@@ -132,7 +141,7 @@ def adicionar_coleta():
     print ('   |2ª| - Vespertino') 
     print ('   |3ª| - Noite') 
     print ('Digite sua opção: 1 a 3')
-    horaColeta = input('Digite o tipo de coleta: ')
+    horaColeta = input('Digite o tipo de coleta: \n')
     horaColeta=horaColeta.upper()
     horacoleta.append(horaColeta)
     if horaColeta == "1":
@@ -229,13 +238,11 @@ while opcao != '9': # fecha o aplicativo
         listar_coleta()
                         
     elif opcao == '7': # exclui coleta
-        #cliente=input('Digite nome do cliente')
-        #if cliente== cliente:
+        
         buscar_coletaSeletiva()
 
     elif opcao == '8': # exclui coleta
-        #cliente=input('Digite nome do cliente')
-        #if cliente== cliente:
+        
         excluir_coletaSeletiva()
 
     elif opcao == '9': # lista soicitações de coleta
